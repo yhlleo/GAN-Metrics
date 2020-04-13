@@ -1,7 +1,7 @@
 #! -*- coding: utf-8 -*-
+# Author: Yahui Liu <yahui.liu@unitn.it>
 """
-We provide the metrics IS, FID, NDB and JSD.
-To evaluate LPIPS: https://github.com/richzhang/PerceptualSimilarity 
+metrics IS, FID, NDB and JSD.
 """
 
 import os

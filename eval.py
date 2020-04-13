@@ -52,7 +52,7 @@ if __name__ == '__main__':
         from scores.inception_score_tf import get_inception_score
         images = []
         for ll in pred_list:
-            images.append(data_ios.imread(ll, args.resize))
+            images.append(data_ios.imread(ll.strip(), args.resize))
         with tf.device('/device:GPU:{}'.format(args.gpu_id)):
              final_score, stddev = get_inception_score(images)
         print(final_score, stddev)

@@ -14,7 +14,7 @@ dependencies:
 - scikit-image
 - scikit-learn
 - tensorflow-gpu==1.12
-- gin-config==0.1.4
+- gin-config
 - opencv3
 - pip:
   - dominate==2.3.1

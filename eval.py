@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     if metric_mode in ['fid', 'ndb', 'jsd']:
         with open(args.gt_list, 'r') as fin_gt:
-            gt_list = [line.strip() for line gt_list]
+            gt_list = [line.strip() for line in gt_list]
 
     final_score = 0.0
     if metric_mode == 'is':

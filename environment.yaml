@@ -1,0 +1,23 @@
+name: metrics
+channels:
+- peterjc123
+- menpo
+- conda-forge
+- defaults
+- anaconda
+dependencies:
+- python=3.5.5
+- pytorch=0.4.1
+- torchvision==0.2.1
+- scipy
+- scikit-image
+- scikit-learn
+- tensorflow-gpu
+- opencv3
+- pip:
+  - dominate==2.3.1
+  - Pillow==5.0.0
+  - numpy==1.15.0
+  - visdom==0.1.7
+  - matplotlib
+  - tqdm

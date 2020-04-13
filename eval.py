@@ -73,7 +73,7 @@ if __name__ == '__main__':
     else:
         print('Unknown metric mode.')
 
-    logs = {'num_of_files': len(tgt_img_list),
+    logs = {'num_of_files': len(pred_list),
             'metric_mode': metric_mode,
             'final_score': final_score}
     print_eval_log(logs)

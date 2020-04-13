@@ -13,7 +13,7 @@ import data_ios
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('--metric', type=str, default='is', help='[is | fid | ndb | jsd | lpips]')
+parser.add_argument('--metric', type=str, default='is', help='[is | fid | ndb | jsd]')
 parser.add_argument('--pred_list', type=str, help='predict file list path')
 parser.add_argument('--gt_list', type=str, help='real file list path')
 parser.add_argument('--batch_size', type=int, default=8)

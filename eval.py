@@ -58,7 +58,6 @@ if __name__ == '__main__':
         print(final_score, stddev)
     elif metric_mode == 'fid':
         from scores.fid_scores import cal_fid as fid_score
-        batch_size=8, resize=299, use_cuda=False
         real_data_generator = data_ios.data_prepare_fid_is(gt_list, batch_size, args.resize, use_cuda)
         fake_data_generator = data_ios.data_prepare_fid_is(pred_list, batch_size, args.resize, use_cuda)
         dims = 2048

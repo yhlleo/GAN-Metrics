@@ -5,14 +5,16 @@ channels:
 - conda-forge
 - defaults
 - anaconda
+- powerai
 dependencies:
-- python=3.5.5
-- pytorch=0.4.1
+- python=3.6
+- pytorch
 - torchvision==0.2.1
 - scipy
 - scikit-image
 - scikit-learn
-- tensorflow-gpu
+- tensorflow-gpu==1.12
+- gin-config==0.1.4
 - opencv3
 - pip:
   - dominate==2.3.1

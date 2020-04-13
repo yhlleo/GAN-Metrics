@@ -16,6 +16,7 @@ dependencies:
 - tensorflow-gpu==1.12
 - gin-config
 - opencv3
+- ipython
 - pip:
   - Pillow==6.0.0
   - numpy

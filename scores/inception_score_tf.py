@@ -7,15 +7,14 @@ from __future__ import print_function
 
 import os.path
 import sys
+import math
+import glob
 import tarfile
-
+import scipy.misc
 import numpy as np
 from six.moves import urllib
+
 import tensorflow as tf
-import glob
-import scipy.misc
-import math
-import sys
 
 MODEL_DIR = './imagenet'
 DATA_URL = 'http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz'

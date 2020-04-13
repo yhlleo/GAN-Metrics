@@ -49,7 +49,7 @@ if __name__ == '__main__':
     final_score = 0.0
     if metric_mode == 'is':
         import tensorflow as tf
-        from inception_score_tf import get_inception_score
+        from scores.inception_score_tf import get_inception_score
         images = []
         for ll in tgt_img_list:
             images.append(data_io.imread(ll))
@@ -57,14 +57,14 @@ if __name__ == '__main__':
              final_score, stddev = get_inception_score(images)
         print(final_score, stddev)
     elif metric_mode == 'fid':
-        from fid_scores import cal_fid as fid_score
+        from scores.fid_scores import cal_fid as fid_score
         batch_size=8, resize=299, use_cuda=False
         real_data_generator = data_ios.data_prepare_fid_is(gt_list, batch_size, args.resize, use_cuda)
         fake_data_generator = data_ios.data_prepare_fid_is(pred_list, batch_size, args.resize, use_cuda)
         dims = 2048
         final_score = fid_score(src_data_generator, tgt_data_generator, dims, use_cuda)
     elif metric_mode in ['ndb', 'jsd']: 
-        from ndb import NDB
+        from scores.ndb_jsd import NDB
         real_images = data_ios.data_prepare_ndb_jsd(gt_list, args.resize)
         fake_images = data_ios.data_prepare_ndb_jsd(pred_list, args.resize)
         ndb_metric = NDB(training_data=src_images, number_of_bins=args.num_bins, 

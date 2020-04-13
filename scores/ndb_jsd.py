@@ -2,10 +2,11 @@
 
 import os
 import numpy as np
+import pickle as pkl
+
 from sklearn.cluster import KMeans
 from scipy.stats import norm
 from matplotlib import pyplot as plt
-import pickle as pkl
 
 class NDB:
     def __init__(self, training_data=None, number_of_bins=100, significance_level=0.05, z_threshold=None,

@@ -3,9 +3,11 @@
 
 import numpy as np
 from scipy import linalg
-from inception import InceptionV3
+
 import torch
 from torch.nn.functional import adaptive_avg_pool2d
+
+from .inception import InceptionV3
 
 def inception_activations(data_generator, model, dims=2048, use_cuda=True):
     scores = []

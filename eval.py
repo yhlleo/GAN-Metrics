@@ -51,7 +51,7 @@ if __name__ == '__main__':
         import tensorflow as tf
         from scores.inception_score_tf import get_inception_score
         images = []
-        for ll in tgt_img_list:
+        for ll in pred_list:
             images.append(data_io.imread(ll))
         with tf.device('/device:GPU:{}'.format(args.gpu_id)):
              final_score, stddev = get_inception_score(images)
@@ -61,7 +61,7 @@ if __name__ == '__main__':
         real_data_generator = data_ios.data_prepare_fid_is(gt_list, batch_size, args.resize, use_cuda)
         fake_data_generator = data_ios.data_prepare_fid_is(pred_list, batch_size, args.resize, use_cuda)
         dims = 2048
-        final_score = fid_score(src_data_generator, tgt_data_generator, dims, use_cuda)
+        final_score = fid_score(real_data_generator, fake_data_generator, dims, use_cuda)
     elif metric_mode in ['ndb', 'jsd']: 
         from scores.ndb_jsd import NDB
         real_images = data_ios.data_prepare_ndb_jsd(gt_list, args.resize)

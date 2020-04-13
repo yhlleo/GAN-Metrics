@@ -40,11 +40,11 @@ if __name__ == '__main__':
     
     pred_list, gt_list = [], []
     with open(args.pred_list, 'r') as fin_pred:
-        pred_list = [line.strip() for line in pred_list]
+        pred_list = [line.strip() for line in fin_pred]
 
     if metric_mode in ['fid', 'ndb', 'jsd']:
         with open(args.gt_list, 'r') as fin_gt:
-            gt_list = [line.strip() for line in gt_list]
+            gt_list = [line.strip() for line in fin_gt]
 
     final_score = 0.0
     if metric_mode == 'is':

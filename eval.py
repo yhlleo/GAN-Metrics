@@ -20,6 +20,7 @@ parser.add_argument('--batch_size', type=int, default=8)
 parser.add_argument('--gpu_id', type=str, default='0', help='default is 0th GPU')
 parser.add_argument('--resize', type=int, default=128, help='128 for NDB and JSD; 299 for FID and IS')
 parser.add_argument('--num_bins', default=100, help='used in NDB and JSD')
+parser.add_argument('--dataset', type=str, help='dataset to be tested')
 args = parser.parse_args()
 
 def print_eval_log(opt):
@@ -66,9 +67,9 @@ if __name__ == '__main__':
         from scores.ndb_jsd import NDB
         real_images = data_ios.data_prepare_ndb_jsd(gt_list, args.resize)
         fake_images = data_ios.data_prepare_ndb_jsd(pred_list, args.resize)
-        ndb_metric = NDB(training_data=src_images, number_of_bins=args.num_bins, 
+        ndb_metric = NDB(training_data=real_images, number_of_bins=args.num_bins, 
             z_threshold=4, whitening=False, cache_folder='./{}'.format(args.dataset))
-        results = ndb_metric.evaluate(trg_images, 'test')
+        results = ndb_metric.evaluate(fake_images, 'test')
         final_score = results['NDB']
     else:
         print('Unknown metric mode.')

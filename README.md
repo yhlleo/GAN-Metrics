@@ -1,4 +1,7 @@
  # Metrics of GANs
+ 
+[![Maintenance](https://img.shields.io/badge/Maintaining%3F-yes-green.svg)]((https://github.com/yhlleo/frechet-bert-distance/graphs/commit-activity))
+![Contributing](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
 
   - [x] Fréchet Inception Distance (**FID**)
   - [x] Inception Score (**IS**)
